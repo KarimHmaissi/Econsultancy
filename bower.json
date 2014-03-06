@@ -1,0 +1,6 @@
+{
+  "name": "front-end-assesment",
+  "dependencies": {
+    "jasmine": "~2.0.0"
+  }
+}

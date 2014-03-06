@@ -1,0 +1,5 @@
+ec = {
+  views: {},
+  util: {},
+  user: {}
+}

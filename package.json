@@ -1,0 +1,7 @@
+{
+  "name": "front-end-assesment",
+  "description": "Econsultancy front end assesment",
+  "dependencies": {
+    "connect": "~2.13.0"
+  }
+}

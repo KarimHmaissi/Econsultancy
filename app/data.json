@@ -1,0 +1,23 @@
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "dateOfBirth": "347500800000",
+  "purchases": [
+    {
+      "name": "Small business subscription",
+      "id": "24",
+      "expired": "false",
+      "dateOfPurchase": ""
+    },
+    {
+      "name": "Festival of Marketing booking",
+      "id": "135",
+      "dateOfPurchase": ""
+    },
+    {
+      "name": "Digital Marketing template",
+      "id": "98",
+      "dateOfPurchase": ""
+    }
+  ]
+}

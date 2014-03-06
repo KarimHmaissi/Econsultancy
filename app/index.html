@@ -6,13 +6,23 @@
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
+    <div class="container">
 
-    <div class="parent">
-      <p class="fullname"></p>
-      <p class="email"></p>
-      <p class="subscription"></p>
-      <p class="date-joined"></p>
-      <p class="purchases"></p>
+      <div class="account-holder">
+        <h1 class="title text-center">Summary Account Details</h1>
+        <div class="parent">
+          <p class="label"><strong>Name</strong></p><p class="fullname"></p>
+          <p class="label"><strong>Email</strong></p><p class="email"></p>
+          <p class="label"><strong>Subscription</strong></p><p class="subscription"></p>
+          <p class="label"><strong>Date joined</strong></p><p class="date-joined"></p>
+          <p class="label"><strong>Recent Purchases</strong></p><p class="purchases"></p>
+        </div>
+
+        <div class="btn-container text-right">
+          <a href="#" class="btn">SEE MORE</a>
+          <a href="#" class="btn">CLOSE</a>
+        </div>
+      </div>
     </div>
 
     <script src="js/namespace.js"></script>
@@ -20,7 +30,13 @@
     <script src="js/user.js"></script>
     <script src="js/user_summary_view.js"></script>
     <script>
-      ec.views.userSummary.init(document.querySelector(".parent"));
+      ec.views.userSummary.init(document.querySelector(".parent"), {
+        firstName: "John",
+        lastName: "Doe",
+        email: "john.doe@gmail.com",
+        subscriptions: [],
+        dateJoined: Date.now()
+      });
     </script>
   </body>
 </html>

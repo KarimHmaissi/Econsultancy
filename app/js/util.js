@@ -20,6 +20,7 @@ ec.util.getJson = function(successFn) {
     }
   };
 
+  //problems with path name. To save time added data.json to app root. 
   xhr.open("GET", "data.json", true);
   xhr.send(null);
 

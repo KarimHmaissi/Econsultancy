@@ -1,7 +1,7 @@
 ec.views.userSummary = (function() {
   var model, fullName, email, subscription, dateJoined, recentPurchases;
 
-  function init(parentNode) {
+  function init(parentNode, initUserState) {
     var getNode = parentNode.querySelector.bind(parentNode);
     fullName = getNode('.fullname');
     email = getNode('.email');
@@ -10,20 +10,26 @@ ec.views.userSummary = (function() {
     recentPurchases = getNode('.purchases');
 
     ec.util.getJson(function(result) {
-      //add init user state. This data should come from a form or an api. 
-      model = new ec.User("John","Doe", "john.doe@gmail.com", [], Date.now());
+      //add init user state. This data should come from a form or an api.
+      //Ensured user object constructor is not in the global scope.
+      model = new ec.User(
+        initUserState.firstName,
+        initUserState.lastName,
+        initUserState.email,
+        initUserState.subscriptions,
+        initUserState.dateJoined
+      );
 
       //Will not work in IE or early browsers. Recomend downloading and including JSON2
       result = JSON.parse(result);
 
-      //should use extend here to combine the json object with the original data but they are completley different?
+      //should use extend here to combine the json object with the original data
       // model = ec.util.extend(result); 
 
       for (var prop in result) {
         model[prop] = result[prop];
       };
-      
-       console.log(model);
+
       render(model);
       return model;
     });
